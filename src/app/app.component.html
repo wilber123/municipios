@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:left">
+<img width="1300" alt="Angular Logo"  src="assets/img/banner.jpg">
+</div>
+<div class="container">
+<div class="row">
+  <div class="col-sm">
+  <h3 style="text-align: left"><app-variables></app-variables></h3>
+</div>
+
+<div class="col-sm">
+	<label>Municipios :</label>
+  <select (change) = "onChange($event.target.value)">
+    <option value="-1" selected>TODOS</option>
+<option [value]="i" *ngFor="let o of _ds.municipios; let i=index" >{{o.municipio}}</option>
+  </select>
+</div>
+</div>
+
+<div *ngIf= "selected"><app-preguntas [indexSelected]="selected"></app-preguntas></div>
+
+</div>
+
+ <body style="background-color:#222A0A; font-size:100px" >
+
+<app-pie>
+	</app-pie>
